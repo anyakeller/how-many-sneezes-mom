@@ -1,0 +1,14 @@
+install:
+  - npm ci
+  - cd client && npm ci
+cache:
+  directories:
+    - node_modules
+    - client/node_modules
+    - "$HOME/.npm"
+language: node_js
+script:
+  - npm test
+  - npm run build
+node_js:
+  - stable
